@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+э<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -16,10 +31,14 @@
   <button onclick="pay(1000)" style="padding:12px 24px; margin:8px;">💫 1000 yulduz</button><br />
   <button onclick="pay(2000)" style="padding:12px 24px; margin:8px;">💫 2000 yulduz</button><br />
 
-  <script>
-    function pay(amount) {
-      Telegram.WebApp.sendData(JSON.stringify({stars: amount}));
-      Telegram.WebApp.close();
+ <script>
+  function pay(amount) {
+    Telegram.WebApp.openInvoice({
+      slug: "stars-50", // 
+    });
+  }
+</script>
+
     }
   </script>
 </body>
